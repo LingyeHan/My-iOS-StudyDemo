@@ -25,7 +25,7 @@ class FirstViewController: UIViewController {
     }
     
     @objc private func buttonClick() {
-        let secondViewController = SecondViewController()
+        let secondViewController = KVCViewController()
         navigationController?.pushViewController(secondViewController, animated: true)
     }
 }

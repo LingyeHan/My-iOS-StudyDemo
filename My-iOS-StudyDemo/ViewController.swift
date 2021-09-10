@@ -11,8 +11,12 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let items = ["Closure", "UI"]
-    let vcs = [FirstViewController.self, UITestViewController.self]
+    let items = ["Runtime", "RunLoop", "Closure", "UI", "GCD"]
+    let vcs = [RuntimeViewController.self,
+            RunLoopViewController.self,
+               FirstViewController.self,
+               UIHitTestViewController.self,
+               GCDViewController.self]
 
     override func viewDidLoad() {
         super.viewDidLoad()

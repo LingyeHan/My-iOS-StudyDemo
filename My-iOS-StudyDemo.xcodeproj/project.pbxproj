@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69036741261F007500387B59 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69036740261F007500387B59 /* GCDViewController.m */; };
+		6927A4C3260ADEAC009CD10F /* DesignPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 6927A4C2260ADEAC009CD10F /* DesignPattern.png */; };
+		6927A4C7260ADF18009CD10F /* SingleResponsibilityPrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A4C6260ADF18009CD10F /* SingleResponsibilityPrinciple.swift */; };
+		6927A4CB260AE007009CD10F /* OpenClosePrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A4CA260AE007009CD10F /* OpenClosePrinciple.swift */; };
+		6927A4CE260AE0FD009CD10F /* LiskovSubstitutionPrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A4CD260AE0FD009CD10F /* LiskovSubstitutionPrinciple.swift */; };
+		6927A4D1260AE177009CD10F /* InterfaceSegregationPrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A4D0260AE177009CD10F /* InterfaceSegregationPrinciple.swift */; };
+		6927A4D4260AE22C009CD10F /* DependenceInversionPrinciple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A4D3260AE22C009CD10F /* DependenceInversionPrinciple.swift */; };
+		6927A4D7260AEB1F009CD10F /* DesignPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A4D6260AEB1F009CD10F /* DesignPattern.swift */; };
+		6927A669260DDE3C009CD10F /* KVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A668260DDE3C009CD10F /* KVCViewController.swift */; };
+		6927A66E2611A928009CD10F /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6927A66D2611A928009CD10F /* RunLoopViewController.m */; };
+		6927A6E82615651E009CD10F /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6927A6E72615651E009CD10F /* RuntimeViewController.m */; };
 		6960A31325ECBD64002A4AFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A31225ECBD64002A4AFB /* AppDelegate.swift */; };
 		6960A31525ECBD64002A4AFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A31425ECBD64002A4AFB /* SceneDelegate.swift */; };
 		6960A31725ECBD64002A4AFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A31625ECBD64002A4AFB /* ViewController.swift */; };
@@ -19,10 +30,27 @@
 		6960A33825ECDFD7002A4AFB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6960A33725ECDFD7002A4AFB /* Person.m */; };
 		6960A33C25ECE1FE002A4AFB /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6960A33B25ECE1FE002A4AFB /* Student.m */; };
 		6960A34225ECE28F002A4AFB /* Person+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 6960A34125ECE28F002A4AFB /* Person+Extention.m */; };
-		6960A34925EDDAF5002A4AFB /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A34825EDDAF5002A4AFB /* UITestViewController.swift */; };
+		6960A34925EDDAF5002A4AFB /* UIHitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A34825EDDAF5002A4AFB /* UIHitTestViewController.swift */; };
+		69CB81CA262FFAEA006BB410 /* Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB81C9262FFAEA006BB410 /* Sort.m */; };
+		69CB81CE262FFB33006BB410 /* Find.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB81CD262FFB33006BB410 /* Find.m */; };
+		69CB81D2263020FB006BB410 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB81D1263020FB006BB410 /* Algorithm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6903673F261F007500387B59 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		69036740261F007500387B59 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		6927A4C2260ADEAC009CD10F /* DesignPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DesignPattern.png; sourceTree = "<group>"; };
+		6927A4C6260ADF18009CD10F /* SingleResponsibilityPrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResponsibilityPrinciple.swift; sourceTree = "<group>"; };
+		6927A4CA260AE007009CD10F /* OpenClosePrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClosePrinciple.swift; sourceTree = "<group>"; };
+		6927A4CD260AE0FD009CD10F /* LiskovSubstitutionPrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiskovSubstitutionPrinciple.swift; sourceTree = "<group>"; };
+		6927A4D0260AE177009CD10F /* InterfaceSegregationPrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceSegregationPrinciple.swift; sourceTree = "<group>"; };
+		6927A4D3260AE22C009CD10F /* DependenceInversionPrinciple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenceInversionPrinciple.swift; sourceTree = "<group>"; };
+		6927A4D6260AEB1F009CD10F /* DesignPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignPattern.swift; sourceTree = "<group>"; };
+		6927A668260DDE3C009CD10F /* KVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVCViewController.swift; sourceTree = "<group>"; };
+		6927A66C2611A928009CD10F /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
+		6927A66D2611A928009CD10F /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
+		6927A6E62615651D009CD10F /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		6927A6E72615651E009CD10F /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		6960A30F25ECBD64002A4AFB /* My-iOS-StudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My-iOS-StudyDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6960A31225ECBD64002A4AFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6960A31425ECBD64002A4AFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +69,13 @@
 		6960A33F25ECE222002A4AFB /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		6960A34025ECE28F002A4AFB /* Person+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Extention.h"; sourceTree = "<group>"; };
 		6960A34125ECE28F002A4AFB /* Person+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Extention.m"; sourceTree = "<group>"; };
-		6960A34825EDDAF5002A4AFB /* UITestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
+		6960A34825EDDAF5002A4AFB /* UIHitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHitTestViewController.swift; sourceTree = "<group>"; };
+		69CB81C8262FFAEA006BB410 /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
+		69CB81C9262FFAEA006BB410 /* Sort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sort.m; sourceTree = "<group>"; };
+		69CB81CC262FFB33006BB410 /* Find.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
+		69CB81CD262FFB33006BB410 /* Find.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Find.m; sourceTree = "<group>"; };
+		69CB81D0263020FB006BB410 /* Algorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		69CB81D1263020FB006BB410 /* Algorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +89,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6903673E261F005200387B59 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				6903673F261F007500387B59 /* GCDViewController.h */,
+				69036740261F007500387B59 /* GCDViewController.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		6927A4C1260ADE1E009CD10F /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				6927A4C5260ADEC2009CD10F /* SOLID */,
+				6927A4C2260ADEAC009CD10F /* DesignPattern.png */,
+				6927A4D6260AEB1F009CD10F /* DesignPattern.swift */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
+		6927A4C5260ADEC2009CD10F /* SOLID */ = {
+			isa = PBXGroup;
+			children = (
+				6927A4C6260ADF18009CD10F /* SingleResponsibilityPrinciple.swift */,
+				6927A4CA260AE007009CD10F /* OpenClosePrinciple.swift */,
+				6927A4CD260AE0FD009CD10F /* LiskovSubstitutionPrinciple.swift */,
+				6927A4D0260AE177009CD10F /* InterfaceSegregationPrinciple.swift */,
+				6927A4D3260AE22C009CD10F /* DependenceInversionPrinciple.swift */,
+			);
+			path = SOLID;
+			sourceTree = "<group>";
+		};
+		6927A66B2611A8D6009CD10F /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				6927A66C2611A928009CD10F /* RunLoopViewController.h */,
+				6927A66D2611A928009CD10F /* RunLoopViewController.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		6927A6702611E538009CD10F /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				6927A6E62615651D009CD10F /* RuntimeViewController.h */,
+				6927A6E72615651E009CD10F /* RuntimeViewController.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
 		6960A30625ECBD64002A4AFB = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +157,11 @@
 		6960A31125ECBD64002A4AFB /* My-iOS-StudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				69CB81C7262FFA19006BB410 /* Algorithm */,
+				6903673E261F005200387B59 /* GCD */,
+				6927A6702611E538009CD10F /* Runtime */,
+				6927A66B2611A8D6009CD10F /* RunLoop */,
+				6927A4C1260ADE1E009CD10F /* DesignPattern */,
 				6960A34725EDDA8B002A4AFB /* UI */,
 				6960A33425ECD67A002A4AFB /* OC */,
 				6960A32825ECBE30002A4AFB /* Swift */,
@@ -91,7 +179,7 @@
 		6960A32825ECBE30002A4AFB /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				6960A34625EDDA67002A4AFB /* T */,
+				6960A34625EDDA67002A4AFB /* KVC & KVO */,
 				6960A32925ECBE46002A4AFB /* Closure */,
 			);
 			path = Swift;
@@ -129,19 +217,33 @@
 			path = Load_initialize;
 			sourceTree = "<group>";
 		};
-		6960A34625EDDA67002A4AFB /* T */ = {
+		6960A34625EDDA67002A4AFB /* KVC & KVO */ = {
 			isa = PBXGroup;
 			children = (
+				6927A668260DDE3C009CD10F /* KVCViewController.swift */,
 			);
-			path = T;
+			path = "KVC & KVO";
 			sourceTree = "<group>";
 		};
 		6960A34725EDDA8B002A4AFB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6960A34825EDDAF5002A4AFB /* UITestViewController.swift */,
+				6960A34825EDDAF5002A4AFB /* UIHitTestViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		69CB81C7262FFA19006BB410 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				69CB81C8262FFAEA006BB410 /* Sort.h */,
+				69CB81C9262FFAEA006BB410 /* Sort.m */,
+				69CB81CC262FFB33006BB410 /* Find.h */,
+				69CB81CD262FFB33006BB410 /* Find.m */,
+				69CB81D0263020FB006BB410 /* Algorithm.h */,
+				69CB81D1263020FB006BB410 /* Algorithm.m */,
+			);
+			path = Algorithm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6927A4C3260ADEAC009CD10F /* DesignPattern.png in Resources */,
 				6960A31F25ECBD67002A4AFB /* LaunchScreen.storyboard in Resources */,
 				6960A31C25ECBD67002A4AFB /* Assets.xcassets in Resources */,
 				6960A31A25ECBD64002A4AFB /* Main.storyboard in Resources */,
@@ -218,12 +321,25 @@
 				6960A31725ECBD64002A4AFB /* ViewController.swift in Sources */,
 				6960A31325ECBD64002A4AFB /* AppDelegate.swift in Sources */,
 				6960A33825ECDFD7002A4AFB /* Person.m in Sources */,
+				69036741261F007500387B59 /* GCDViewController.m in Sources */,
+				6927A4CE260AE0FD009CD10F /* LiskovSubstitutionPrinciple.swift in Sources */,
+				69CB81D2263020FB006BB410 /* Algorithm.m in Sources */,
 				6960A34225ECE28F002A4AFB /* Person+Extention.m in Sources */,
+				6927A4D4260AE22C009CD10F /* DependenceInversionPrinciple.swift in Sources */,
+				6927A4D7260AEB1F009CD10F /* DesignPattern.swift in Sources */,
+				6927A4D1260AE177009CD10F /* InterfaceSegregationPrinciple.swift in Sources */,
+				6927A66E2611A928009CD10F /* RunLoopViewController.m in Sources */,
 				6960A33C25ECE1FE002A4AFB /* Student.m in Sources */,
+				6927A4CB260AE007009CD10F /* OpenClosePrinciple.swift in Sources */,
+				69CB81CA262FFAEA006BB410 /* Sort.m in Sources */,
 				6960A31525ECBD64002A4AFB /* SceneDelegate.swift in Sources */,
-				6960A34925EDDAF5002A4AFB /* UITestViewController.swift in Sources */,
+				6960A34925EDDAF5002A4AFB /* UIHitTestViewController.swift in Sources */,
 				6960A32F25ECBEFD002A4AFB /* SecondViewController.swift in Sources */,
+				6927A669260DDE3C009CD10F /* KVCViewController.swift in Sources */,
+				6927A4C7260ADF18009CD10F /* SingleResponsibilityPrinciple.swift in Sources */,
+				69CB81CE262FFB33006BB410 /* Find.m in Sources */,
 				6960A33225ECBF30002A4AFB /* ThirdViewController.swift in Sources */,
+				6927A6E82615651E009CD10F /* RuntimeViewController.m in Sources */,
 				6960A32B25ECBEAC002A4AFB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = "My-iOS-StudyDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +511,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = "My-iOS-StudyDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

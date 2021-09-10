@@ -1,5 +1,5 @@
 //
-//  UITestViewController.swift
+//  UIHitTestViewController.swift
 //  My-iOS-StudyDemo
 //
 //  Created by Lingye Han on 2021/3/2.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class UITestViewController: UIViewController {
+class UIHitTestViewController: UIViewController {
     private let button: HitTestButton = {
-        let button = HitTestButton()
+        let button = HitTestButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         button.setTitleColor(.black, for: .normal)
         button.setTitle("HitTest & PointInside", for: .normal)
-        button.sizeToFit()
+//        button.sizeToFit()
         return button
     }()
     
@@ -26,7 +26,8 @@ class UITestViewController: UIViewController {
     }
     
     @objc private func buttonClick() {
-//        button.setNeedsDisplay()
+        print(#function)
+        button.setNeedsDisplay()
     }
 
 }
@@ -66,30 +67,29 @@ class HitTestButton: UIButton {
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         print(#function)
-        
-//        let touchRect = bounds.insetBy(dx: -100, dy: -100)
-//        if touchRect.contains(point) {
-////            for subview in subviews.reversed() {
-////                let convertedPoint = subview.convert(point, from: self)
-////                if let view = subview.hitTest(convertedPoint, with: event) {
-////                    return view
-////                }
-////            }
-//            return self
-//        }
-//        return nil
-        let otherView = super.hitTest(point, with: event)
-        if otherView == self {
-            return nil
+        // 扩大事件区域
+        let touchRect = bounds.insetBy(dx: -100, dy: -100)
+        if touchRect.contains(point) {
+//            for subview in subviews.reversed() {
+//                let convertedPoint = subview.convert(point, from: self)
+//                if let view = subview.hitTest(convertedPoint, with: event) {
+//                    return view
+//                }
+//            }
+            return self
         }
-        return self
+        return nil
+//        let otherView = super.hitTest(point, with: event)
+//        if otherView == self {
+//            return nil
+//        }
+//        return self
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         print(#function)
-        return super.point(inside: point, with: event)
 //        let extBounds = bounds.insetBy(dx: -100, dy: -100)
 //        return extBounds.contains(point)
-//        return true
+        return super.point(inside: point, with: event)
     }
 }

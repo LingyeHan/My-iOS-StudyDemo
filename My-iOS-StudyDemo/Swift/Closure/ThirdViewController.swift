@@ -26,9 +26,10 @@ class ThirdViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
         
         // 方式一：自定义通知队列：可以始终在主线程中更新UI
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("Test"), object: nil, queue: OperationQueue.main) { (notification) in
-            self.button.setTitle("通知", for: .normal)
-        }
+//        NotificationCenter.default.addObserver(forName: NSNotification.Name("Test"), object: nil, queue: OperationQueue.main) { (notification) in
+//            self.button.setTitle("通知 main", for: .normal)
+//            print("通知 main")
+//        }
         
         // 方式二：需要在方法中加上主线程
         NotificationCenter.default.addObserver(self, selector: #selector(notice), name: NSNotification.Name("Test"), object: nil)
@@ -36,15 +37,18 @@ class ThirdViewController: UIViewController {
 
     @objc func notice() {
         print("KVO或Notification不管添加通知在主线程还是子线程, 接收通知的方法所在的线程是由发送通知的线程决定的")
-        print("当前线程是否主线程: %@", Thread.current.isMainThread)
+        print("当前线程是否主线程: \(Thread.current.isMainThread)")
         DispatchQueue.main.async {
             self.button.setTitle("通知", for: .normal)
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("Test"), object: nil)
+    }
+    
     deinit {
         print("ThirdViewController - 被释放了")
-        NotificationCenter.default.removeObserver(NSNotification.Name("Test"))
     }
     
     @objc private func buttonClick() {

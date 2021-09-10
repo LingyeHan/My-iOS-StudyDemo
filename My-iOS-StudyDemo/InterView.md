@@ -1,4 +1,8 @@
 # 基础
+###Swift 与 OC 区别？
+* swift是静态类型语言，而oc是动态类型语言
+* swift注重安全性，oc注重灵活性。swift有函数式编程，面向对象编程和面向协议编程，而oc几乎只有面向对象编程。swift更注重值类型的数据结构，而oc遵循c语言的老一套，注重指针和索引。
+
 ###KVO，NSNotification，delegate及block区别
 * `KVO`就是`cocoa`框架实现的观察者模式，一般同`KVC`搭配使用，通过`KVO`可以监测一个值的变化，比如View的高度变化。是一对多的关系，一个值的变化会通知所有的观察者。
 *  `NSNotification`是通知，也是一对多的使用场景。在某些情况下，KVO和`NSNotification`是一样的，都是状态变化之后告知对方。`NSNotification`的特点，就是需要被观察者先主动发出通知，然后观察者注册监听后再来进行响应，比KVO多了发送通知的一步，但是其优 点是监听不局限于属性的变化，还可以对多种多样的状态变化进行监听，监听范围广，使用也更灵活。
@@ -71,21 +75,15 @@
 * `NSObject *`指向的必须是`NSObject`的子类，调用的也只能是NSObjec里面的方法否则就要做强制类型转换。
 * 不是所有的OC对象都是NSObject的子类，还有一些继承自`NSProxy`。`NSObject *`可指向的类型是id的子集。
 
-####iOS 核心框架
-* CoreAnimation   核心动画
-* CoreGraphics   核心图层
-* CoreLocation   核心定位
-* AVFoundation   多媒体
-* Foundation     核心基本功能
-
-####iOS核心机制
-* UITableView 重用
-* ObjC内存管理；自动释放池，ARC如何实现
-* RunLoop
-* Runtime
-* Block的定义、特性、内存区域、如何实现
-* NSOperation
-* GCD
+###NSProxy
+* NSProxy是一个类似于NSObject的根类，实现代理、提供消息转发机制，常用来模拟多重继承、实现AOP(Hook)、实现弱引用(解决Timer或CADisplayLink强引用)、避免循环引用、实现Lazy初始化
+    NS_ROOT_CLASS
+    @interface NSProxy <NSObject> {
+        __ptrauth_objc_isa_pointer Class	isa;
+    }
+    必须重写下面2个方法:
+    - (void)forwardInvocation:(NSInvocation *)invocation;
+    - (nullable NSMethodSignature *)methodSignatureForSelector:(SEL)sel;
 
 ####面向对象编程
 * 封装、继承、多态
@@ -101,17 +99,6 @@
 * 8大排序算法
 * 二叉树实现
 * 二分查找实现
-
-####计算机基础技术
-* 计算机网络： TCP/IP、HTTPCDN、SPDY
-* 计算机安全： RSA、AES、DES
-* 操作系统：线程、进程、堆栈、死锁、调度算法
-
-#### iOS新特性、新技术
-* iOS7 UIDynamic、SpritKit、新布局、扁平化
-* iOS8 应用程序扩展、HealthKit、SceneKit、CoreLocation、TouchID、PhotoKit
-* iOS9 3D-Touch
-* Apple Watch
 
 ###简述OC中内存管理机制
 * 内存管理机制:使用引用计数管理,分为`ARC`和`MRC`
@@ -131,18 +118,22 @@
 * 栈区：由编译器自动分配释放，不需要管理内存
 * 堆区：一般由程序员分配释放
 * 全局区：存放全局变量和静态变量
-* 文字常量区：存放常量字符创
+* 文字常量区：存放常量字符串
 * 程序代码区：存放二进制代码
+
+###堆和栈的区别
+* 栈：内存系统管理，系统管理，系统释放，先进后出
+* 堆：内存自己管理，自己开辟，自己释放，先进先出
 
 ###类变量的@protected,@private,@public,@package的含义
 * @protected 受保护的，本类以及子类可见
 * @private 私有的，类内可见
 * @public 公有的，类内，子类外部均可访问
-* @package 可见度@protected和@public之间，这个类型最常用于矿建的实例变量
+* @package 可见度@protected和@public之间，这个类型最常用于扩建的实例变量
 
 ###浅谈对线程和进程的理解
 * 进程：正在运行的程序，负责程序的内存分配
-* 线程：线程是进程中一个独立执行的控制单元，一个进行至少包含一个线程，即主线程
+* 线程：线程是进程中一个独立执行的控制单元，一个进程至少包含一个线程，即主线程
 * 创建线程的目的：开辟一个新的执行路径，运行指定的代码，与主线程的代码实现同时执行
 
 ###iOS中多线程的开发
@@ -156,15 +147,11 @@
 
 ###iOS类是否可以多继承,如果没有,怎么实现
 * 不可以多继承.
-* 可以通过类目,延展,协议实现多继承
+* 可以通过分类,扩展,协议实现多继承
 * 类目:类目也叫分类,英文category,在没有原类.m文件的基础上,给该类添加方法.类目里不能添加实例变量,不能添加和原始类方法名相同的方法,否则会发生覆盖.一个类可以添加多个类目,类目中的方法可以成为原始类的一部分,和原始类方法级别相同,可以被子类继承.
 * 延展:Extension,是一种特殊形式的类目,主要是在一个类的.m里面声明与实现.作用:就是给某类添加私有方法或者私有变量.
 * 虽然延展是给一个类定义私有方法,但是OC没有绝对的私有方法,其实还是可以调用的,延展里面声明的变量只能在该类内部使用,外界访问不了.如果是新建文件建的的某类延展.h文件,则不能添加实例变量,如果括号里没有类目名,则认为延展里面的方法为全都必须实现,如果有,则可选实现.
 * 类目写的方法必须实现,延展写的方法非必须.
-
-###堆和栈的区别
-* 栈：内存系统管理，系统凯里，系统释放，先进后出
-* 堆：内存自己管理，自己开辟，自己释放，先进先出
 
 ###iOS本地数据存储都有几种方式
 * Write写入方式:永久保存在磁盘中.具体:a.获得文件保存的路径.b.生成该路径下的文件,c,往文件中写入数据.d.从文件中读出数据.
@@ -222,6 +209,7 @@
 
 #### iPhone OS 有没有垃圾回收机制,简易阐述一下OC内存管理
 没有，oc的内存管理是依赖引用计数，ARC和MRC两个管理方式
+
 #### 简述应用程序按HOME键后进入后台的生命周期，一起从前台进入后台时的生命周期
 前者：
 > - (void)applicationWillResignActive:(UIApplication *)application
@@ -290,13 +278,16 @@
 > 1或者2.看person是什么类型修饰的.
 > alloc+1,assign+0,retain+1.
 #### 下面这段代码有何问题
+` 
  @implementation Person
 - (void)setAge:(int)newAge {
-`      self.age = newAge;      
-` }
+     self.age = newAge;      
+   }
  @end 
+ `
 死循环
 #### 这段代码有什么问题,如何修改
+` 
 for (int i = 0; i \< someLargeNumber; i++) {
     NSString *string = @”Abc”;
     string = [string lowercaseString](#);
@@ -312,6 +303,7 @@ for (int i = 0; i \< someLargeNumber; i++) {
         NSLog(@“%@”, string);
     }
 }
+` 
 #### 截取字符串"20 | http://www.baidu.com"中，"|"字符前面和后面的数据，分别输出它们。
  ["20 | http://www.baidu.com" componentSeparatedByString:@"|"](#);
 #### 用obj-c 写一个冒泡排序.
@@ -828,7 +820,8 @@ import是Objective-C导入头文件的关键字，#include是C/C++导入头文�
 4. retain 表示持有特性，setter方法将传入参数先保留，再赋值，传入参数的retaincount会+1;
 5. copy 表示赋值特性，setter方法将传入对象复制一份;需要完全一份新的变量时。
 6. nonatomic 非原子操作，决定编译器生成的setter getter是否是原子操作，atomic表示多线程安全，一般使用nonatomic
-#### 写一个setter方法用于完成@property (nonatomic,retain)NSString *name,写一个setter方法用于完成@property(nonatomic，copy)NSString *name
+
+#### 写一个setter方法用于完成@property (nonatomic,retain)NSString *name
 - (void) setName:(NSString*) str
 {
 [str retain](#);
@@ -842,8 +835,6 @@ name = str;
     name = t;
 }
 
-#### 对于语句NSString*obj = [[NSData alloc](#) init]; obj在编译时和运行时分别时什么类型的对象?
-编译时是NSString的类型;运行时是NSData类型的对象
 #### 常见的object-c的数据类型有那些， 和C的基本数据类型有什么区别?如：NSInteger和int
 object-c的数据类型有NSString，NSNumber，NSArray，NSMutableArray，NSData等等，这些都是class，创建后便是对象，而C语言的基本数据类型int，只是一定字节的内存空间，用于存放数值;NSInteger是基本数据类型，并不是NSNumber的子类，当然也不是NSObject的子类。NSInteger是基本数据类型Int或者Long的别名(NSInteger的定义typedef long NSInteger)，它的区别在于，NSInteger会根据系统是32位还是64位来决定是本身是int还是Long。
 #### id 声明的对象有什么特性
@@ -1350,13 +1341,11 @@ dispatch_barrier_async(dispatch_queue_t queue, dispatch_block_t block);
 ####如何高性能的给 UIImageView 加个圆角?
 不好的解决方案  
 使用下面的方式会强制Core Animation提前渲染屏幕的离屏绘制, 而离屏绘制就会给性能带来负面影响，会有卡顿的现象出现  
-
 self.view.layer.cornerRadius = 5;
 self.view.layer.masksToBounds = YES;
-正确的解决方案：使用绘图技术
 
-- (UIImage *)circleImage  
-    {  
+正确的解决方案：使用绘图技术
+- (UIImage *)circleImage {  
         // NO代表透明  
         UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);  
         // 获得上下文  
@@ -1367,14 +1356,13 @@ self.view.layer.masksToBounds = YES;
         // 裁剪  
         CGContextClip(ctx);  
         // 将图片画上去  
-        [self drawInRect:rect](#);  
+        [self drawInRect:rect];  
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();  
         // 关闭上下文  
         UIGraphicsEndImageContext();  
         return image;  
     }  
 * 还有一种方案：使用了贝塞尔曲线"切割"个这个图片, 给UIImageView 添加了的圆角，其实也是通过绘图技术来实现的
-
     UIImageView *imageView = [[UIImageView alloc](#)   initWithFrame:CGRectMake(0, 0, 100, 100)];  
     imageView.center = CGPointMake(200, 300);  
     UIImage *anotherImage = [UIImage imageNamed:@"image"](#);  
@@ -1398,72 +1386,7 @@ self.view.layer.masksToBounds = YES;
 3. 如果在内存和磁盘缓存中都没有找到，就会向远程服务器发送请求，开始下载图片
 4. 下载后的图片会加入缓存中，并写入磁盘中
 5. 整个获取图片的过程都是在子线程中执行，获取到图片后回到主线程将图片显示出来
-
-#### 控制器的生命周期
- 就是问的view的生命周期，下面已经按方法执行顺序进行了排序
-
-// 自定义控制器view，这个方法只有实现了才会执行  
-- (void)loadView  
-	{  
-	    self.view = [[UIView alloc] init];  
-	    self.view.backgroundColor = [UIColor orangeColor](#);  
-	}  
-	// view是懒加载，只要view加载完毕就调用这个方法  
-	- (void)viewDidLoad  
-	{  
-	    [super viewDidLoad](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// view即将显示  
-	- (void)viewWillAppear:(BOOL)animated  
-	{  
-	    [super viewWillAppear:animated](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// view即将开始布局子控件  
-	- (void)viewWillLayoutSubviews  
-	{  
-	    [super viewWillLayoutSubviews](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// view已经完成子控件的布局  
-	- (void)viewDidLayoutSubviews  
-	{  
-	    [super viewDidLayoutSubviews](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// view已经出现  
-	- (void)viewDidAppear:(BOOL)animated  
-	{  
-	    [super viewDidAppear:animated](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// view即将消失  
-	- (void)viewWillDisappear:(BOOL)animated  
-	{  
-	    [super viewWillDisappear:animated](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// view已经消失  
-	- (void)viewDidDisappear:(BOOL)animated  
-	{  
-	    [super viewDidDisappear:animated](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// 收到内存警告  
-	- (void)didReceiveMemoryWarning  
-	{  
-	    [super didReceiveMemoryWarning](#);  
-	    NSLog(@"%s",__func__);  
-	}  
-	// 方法已过期，即将销毁view  
-	- (void)viewWillUnload  
-	{  
-	}  
-	// 方法已过期，已经销毁view  
-	- (void)viewDidUnload  
-	{  
-	}  
+ 
 #### 你是怎么封装一个view的
 * 可以通过纯代码或者xib的方式来封装子控件
 * 建立一个跟view相关的模型，然后将模型数据传给view，通过模型上的数据给view的子控件赋值
